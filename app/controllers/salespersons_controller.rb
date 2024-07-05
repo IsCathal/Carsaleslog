@@ -1,7 +1,7 @@
 class SalespersonsController < ApplicationController
 
   def index
-    @salespersonalespersons = Salesperson.all
+    @salespersons = Salesperson.all
 
   end
 
