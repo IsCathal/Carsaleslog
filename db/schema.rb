@@ -17,7 +17,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_05_172608) do
     t.string "fuelType"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.integer "salesperson_id"
   end
 
