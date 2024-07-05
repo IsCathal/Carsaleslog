@@ -13,18 +13,20 @@
     <%= f.label :carModel, "carModel Name" %><br/>
     <%= f.text_field :carModel %>
   </p>
-
   <p>
-  <%= f.label :salesDate, "salesDate Name" %><br/>
-  <%= f.text_field :salesDate %>
-</p>
-<p>
-<%= f.label :fuelType, "fuelType Name" %><br/>
-<%= f.text_field :fuelType %>
-</p>
-
-<%= collection_select(:sale, :salesperson_id, @salespersons, :id, :firstName, prompt: true) %>
-
+    <%= f.label :salesDate, "salesDate Name" %><br/>
+    <%= f.text_field :salesDate %>
+  </p>
+  <p>
+    <%= f.label :fuelType %><br>
+    <%= f.radio_button :fuelType, "Petrol" %>
+    <%= f.label :fuelType, "Petrol" %>
+    <%= f.radio_button :fuelType, "Diesel" %>
+    <%= f.label :fuelType, "Diesel" %>
+  </p>
+  <p>
+    <%= collection_select(:sale, :salesperson_id, @salespersons, :id, :firstName, prompt: true) %>
+  </p>
   <p>
     <%= f.submit %>
   </p>
