@@ -1,6 +1,8 @@
 class SalespersonsController < ApplicationController
 
   def index
+    @salespersonalespersons = Salesperson.all
+
   end
 
   def show
