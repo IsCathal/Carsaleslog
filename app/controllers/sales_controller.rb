@@ -10,9 +10,20 @@ class SalesController < ApplicationController
   end
 
   def new
+    @sale = Sale.new
+
   end
 
   def create
+    byebug
+    @sale= Sale.new(sale_params)
+    if @sale.save
+      flash[:notice] = "Item was successfully created"
+      redirect_to root_path
+    else
+      flash[:notice] = "There was an error"
+      render 'new'
+    end
   end
 
   def edit
@@ -21,6 +32,8 @@ class SalesController < ApplicationController
   def update
   end
   
-
+  def sale_params
+    params.require(:sale).permit(:carModel, :salesDate, :fuelType, :salesperson_id)
+  end
 
 end

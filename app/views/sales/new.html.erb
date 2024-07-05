@@ -1,1 +1,35 @@
 <h1>Hello Sales Log</h1>
+<% if @sale.errors.any? %>
+  <h2>You got an error</h2>
+  <ul>
+    <% @sale.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @sale, local: true, data: { turbo: false }) do |f| %>
+  <p>
+    <%= f.label :carModel, "carModel Name" %><br/>
+    <%= f.text_field :carModel %>
+  </p>
+
+  <p>
+  <%= f.label :salesDate, "salesDate Name" %><br/>
+  <%= f.text_field :salesDate %>
+</p>
+<p>
+<%= f.label :fuelType, "fuelType Name" %><br/>
+<%= f.text_field :fuelType %>
+</p>
+<p>
+<%= f.label :salesperson_id, "salesperson_id Name" %><br/>
+<%= f.text_field :salesperson_id %>
+</p>
+
+  
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
