@@ -16,8 +16,8 @@ class SalespersonsController < ApplicationController
 
   def create 
     byebug
-    @salespersons= Salesperson.new(salespersons_params)
-    if @salespersons.save
+    @salesperson= Salesperson.new(salesperson_params)
+    if @salesperson.save
       flash[:notice] = "Item was successfully created"
       redirect_to root_path
     else
@@ -32,8 +32,8 @@ class SalespersonsController < ApplicationController
   def update
   end
 
-  def salespersosn_params
-    params.require(:salesperson).permit(:firstName, :lastName, :salesNumber)
+  def salesperson_params
+    params.require(:salesperson).permit(:firstName, :lastName)
   end
   
 end

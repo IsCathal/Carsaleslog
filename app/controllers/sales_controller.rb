@@ -17,7 +17,6 @@ class SalesController < ApplicationController
   end
 
   def create
-    byebug
     @sale= Sale.new(sale_params)
     if @sale.save
       flash[:notice] = "Item was successfully created"

@@ -1,4 +1,28 @@
 <h1>Hello New SalesPerson</h1>
-// break it down 
-// use rails console
-// think! 
+<% if @salesperson.errors.any? %>
+  <h2>You got an error</h2>
+  <ul>
+    <% @salesperson.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @salespeople, local: true, data: { turbo: false }) do |f| %>
+  <p>
+    <%= f.label :firstName, "firstName Name" %><br/>
+    <%= f.text_field :firstName %>
+  </p>
+  <p>
+    <%= f.label :lastName, "lastName Name" %><br/>
+    <%= f.text_field :lastName %>
+  </p>
+  <p>
+    <%= f.label :salesNumber, "salesNumber Name" %><br/>
+    <%= f.text_field :salesNumber %>    
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
