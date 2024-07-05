@@ -1,24 +1,7 @@
-# README
+To Do Models First
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TDD
+1. Sales Model
 
-Things you may want to cover:
+2. SalesPersons Model
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
