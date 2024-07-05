@@ -1,4 +1,6 @@
 class SalesController < ApplicationController
+  before_action :require_salesperon, only: [:create, :index, :new]
+
 
   def index
     @sales = Sale.all
@@ -34,6 +36,10 @@ class SalesController < ApplicationController
   
   def sale_params
     params.require(:sale).permit(:carModel, :salesDate, :fuelType, :salesperson_id)
+  end
+
+  def require_salesperon
+    @salespersons = Salesperson.all
   end
 
 end

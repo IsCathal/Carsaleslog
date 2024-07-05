@@ -22,12 +22,8 @@
 <%= f.label :fuelType, "fuelType Name" %><br/>
 <%= f.text_field :fuelType %>
 </p>
-<p>
-<%= f.label :salesperson_id, "salesperson_id Name" %><br/>
-<%= f.text_field :salesperson_id %>
-</p>
 
-  
+<%= collection_select(:sale, :salesperson_id, @salespersons, :id, :firstName, prompt: true) %>
 
   <p>
     <%= f.submit %>
