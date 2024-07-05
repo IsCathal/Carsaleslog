@@ -1,1 +1,20 @@
 <h1>Hello Sales Table</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>carModel</th>
+      <th>salesDate</th>
+      <th>fuelType</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.carModel %></td>
+        <td><%= sale.salesDate %></td>
+        <td><%= sale.fuelType %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
