@@ -1,4 +1,5 @@
 class Sale < ApplicationRecord
+  belongs_to :salesperson
 
   validates :carModel, presence: true,
                   length: {minimum: 3, maximum: 20}

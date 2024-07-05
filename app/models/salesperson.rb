@@ -1,4 +1,5 @@
 class Salesperson < ApplicationRecord
+  has_many :sales
 
   validates :firstName, presence: true,
                   length: {minimum: 3, maximum: 20}

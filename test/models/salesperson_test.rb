@@ -4,7 +4,7 @@ class SalesPerson < ActiveSupport::TestCase
     @salesPerson = Salesperson.new(firstName: "Charlie", lastName:"McCabe", salesNumber: 0)
   end
 
-  test "sales should be vaild" do 
+  test "sales person should be vaild" do 
     assert @salesPerson.valid?
    end
 
