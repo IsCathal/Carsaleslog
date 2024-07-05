@@ -3,9 +3,10 @@ class CreateSales < ActiveRecord::Migration[7.1]
     create_table :sales do |t|
       t.string :carModel
       t.date :salesDate
-      t.int :salesNumber
+      t.string :fuelType
 
       t.timestamps
     end
   end
 end
+
