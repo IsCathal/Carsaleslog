@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   root 'sales#index'
   resources :sales
-  resources :salespersons
+  resources :salespeople
 
 end

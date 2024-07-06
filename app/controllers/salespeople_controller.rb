@@ -1,4 +1,4 @@
-class SalespersonsController < ApplicationController
+class SalespeopleController < ApplicationController
 
   def index
     @salespersons = Salesperson.all
@@ -33,7 +33,7 @@ class SalespersonsController < ApplicationController
   end
 
   def salesperson_params
-    params.require(:salesperson).permit(:firstName, :lastName)
+    params.require(:salesperson).permit(:firstName, :lastName, :salesNumber)
   end
   
 end

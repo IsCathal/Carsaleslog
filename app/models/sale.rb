@@ -8,5 +8,13 @@ class Sale < ApplicationRecord
                           length: {minimum: 10, maximum: 300} 
 
   validates :fuelType, presence: true
+
+  # "Owned by #{user.name}" if user_id.to_i != 0
+
+
+  def best_seller
+    # if salesperson.salesNumber is best
+
+  end
                                    
 end
