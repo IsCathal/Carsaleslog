@@ -18,8 +18,15 @@ class SalesController < ApplicationController
 
   def create
     @sale= Sale.new(sale_params)
+ 
+    temp_salesperson = Salesperson.find(@sale.salesperson_id)
+    temp_salesperson.salesNumber += 1
+    temp_salesperson.save
+
+
+    byebug
     if @sale.save
-      flash[:notice] = "Item was successfully created"
+      flash[:notice] = "Sale was successfully created"
       redirect_to root_path
     else
       flash[:notice] = "There was an error"
@@ -39,6 +46,16 @@ class SalesController < ApplicationController
 
   def require_salesperon
     @salespersons = Salesperson.all
+  end
+
+  def update_sales_count(sale)
+    p sale
+    salesperson = Salesperson.find(sale.salesperson_id)
+    p salesperson
+    salesperson.salesNumber += 1 
+    salesperson.save
+
+    byebug
   end
 
 end

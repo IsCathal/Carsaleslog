@@ -9,15 +9,12 @@ class Sale < ApplicationRecord
 
   validates :fuelType, presence: true
 
-  # "Owned by #{user.name}" if user_id.to_i != 0
   def seller_name
     "#{salesperson.firstName} #{salesperson.lastName} #{salesperson.salesNumber} sales" if salesperson_id.to_i != 0
   end
 
- #{user.name}" if user_id.to_i != 0
-  def best_seller
-    # if salesperson.salesNumber is best
-
+  def update_sales_count
+    salesperson.salesNumber += 1 
   end
                                    
 end
