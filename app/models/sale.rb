@@ -31,9 +31,7 @@ class Sale < ApplicationRecord
       end
     end
   
-    if salespeople.count > 0
-      highest_sales_number 
-    end
+    highest_sales_number if salespeople.count > 0
   end
                                    
 end
