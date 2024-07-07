@@ -10,7 +10,30 @@ class Sale < ApplicationRecord
   validates :fuelType, presence: true
 
   def seller_name
-    "#{salesperson.firstName} #{salesperson.lastName} #{salesperson.salesNumber} sales" if salesperson_id.to_i != 0
+    if salesperson.salesNumber == top_seller
+      "#{salesperson.firstName} #{salesperson.lastName} #{salesperson.salesNumber} sales (Best salesperson)"
+    else
+     "#{salesperson.firstName} #{salesperson.lastName} #{salesperson.salesNumber} sales"
+    end
+  end
+
+  def top_seller
+
+    salespeople = Salesperson.all
+    
+    top_seller = nil
+    highest_sales_number = 0
+  
+    salespeople.each do |salesperson|
+      if salesperson.salesNumber > highest_sales_number
+        highest_sales_number = salesperson.salesNumber
+        top_seller = salesperson
+      end
+    end
+  
+    if salespeople.count > 0
+      highest_sales_number 
+    end
   end
                                    
 end
