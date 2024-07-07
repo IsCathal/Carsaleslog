@@ -8,5 +8,9 @@ class Salesperson < ApplicationRecord
                           length: {minimum: 3, maximum: 20} 
 
   validates :salesNumber, presence: true
+
+  def display_first_last
+    "#{firstName} #{lastName}"
+  end
                                    
 end

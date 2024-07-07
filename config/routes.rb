@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   root 'sales#index'
   resources :sales, except: [:destroy, :update, :edit, :show]
-  resources :salespeople
+  resources :salespeople, except: [:destroy, :update, :edit, :show]
 
 end

@@ -25,7 +25,7 @@
     <%= f.label :fuelType, "Diesel" %>
   </p>
   <p>
-    <%= collection_select(:sale, :salesperson_id, @salespersons, :id, :firstName, prompt: true) %>
+    <%= collection_select(:sale, :salesperson_id, @salespersons, :id, :display_first_last, prompt: true) %>
   </p>
   <p>
     <%= f.submit %>
