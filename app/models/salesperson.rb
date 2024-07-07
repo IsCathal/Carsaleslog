@@ -10,7 +10,11 @@ class Salesperson < ApplicationRecord
   validates :salesNumber, presence: true
 
   def display_first_last
-    "#{firstName} #{lastName}"
+    if salesNumber == top_seller
+      "#{firstName} #{lastName} (Best salesperson)"
+    else
+       "#{firstName} #{lastName}"
+    end
   end
                                    
 end

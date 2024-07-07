@@ -1,4 +1,4 @@
-<h1>Hello Sales Log</h1>
+<h1>Sales Log</h1>
 <% if @sale.errors.any? %>
   <h2>You got an error</h2>
   <ul>
@@ -10,11 +10,11 @@
 
 <%= form_with(model: @sale, local: true, data: { turbo: false }) do |f| %>
   <p>
-    <%= f.label :carModel, "carModel Name" %><br/>
+    <%= f.label :carModel, "Enter a Car Model" %><br/>
     <%= f.text_field :carModel %>
   </p>
   <p>
-    <%= f.label :salesDate, "salesDate Name" %><br/>
+    <%= f.label :salesDate, "Enter a date of sale" %><br/>
     <%= f.text_field :salesDate %>
   </p>
   <p>
@@ -24,6 +24,8 @@
     <%= f.radio_button :fuelType, "Diesel" %>
     <%= f.label :fuelType, "Diesel" %>
   </p>
+  <h4>Select a Salesperson</h4>
+
   <p>
     <%= collection_select(:sale, :salesperson_id, @salespersons, :id, :display_first_last, prompt: true) %>
   </p>
