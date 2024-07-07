@@ -1,0 +1,19 @@
+<h1>Hello Sales Table</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>firstName</th>
+      <th>lastName</th>
+      <th>salesNumber</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @salespersons.each do |salesperson| %>
+      <tr>
+        <td><%= salesperson.firstName %></td>
+        <td><%= salesperson.lastName %></td>
+        <td><%= salesperson.salesNumber %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

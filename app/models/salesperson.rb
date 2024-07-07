@@ -7,7 +7,6 @@ class Salesperson < ApplicationRecord
   validates :lastName, presence: true, 
                           length: {minimum: 3, maximum: 20} 
 
-  validates :salesNumber, presence: true
 
   def display_first_last
     if salesNumber == top_seller
