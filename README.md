@@ -1,6 +1,6 @@
 # Project Setup and Running Guide
 ##  ER Diagram 
-![image](https://github.com/IsCathal/Basicitemcollection/assets/52865729/660177db-0257-448e-aa5c-c3ceb7a6d40e)
+![image](https://github.com/IsCathal/Carsaleslog/assets/52865729/501a8375-6540-4820-9ed0-253403e3d261)
 
 ## Prerequisites
 
