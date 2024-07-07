@@ -1,9 +1,5 @@
 class SalespeopleController < ApplicationController
 
-  def index
-    @salespersons = Salesperson.all
-  end
-
   def new
     @salesperson= Salesperson.new
   end

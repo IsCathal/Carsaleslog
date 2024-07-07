@@ -39,10 +39,4 @@ class SalesController < ApplicationController
     salesperson.save
   end
 
-  def top_seller
-    list_of_salespeople = Salesperson.all
-    list_of_salespeople.sort_by { |salesperson| -salesperson.salesNumber }
-    list_of_salespeople[0]
-  end
-
 end
