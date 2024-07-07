@@ -24,7 +24,7 @@ class SalesController < ApplicationController
     temp_salesperson.save
 
 
-    byebug
+
     if @sale.save
       flash[:notice] = "Sale was successfully created"
       redirect_to root_path
@@ -54,8 +54,12 @@ class SalesController < ApplicationController
     p salesperson
     salesperson.salesNumber += 1 
     salesperson.save
+  end
 
-    byebug
+  def top_seller
+    list_of_salespeople = Salesperson.all
+    list_of_salespeople.sort_by { |salesperson| -salesperson.salesNumber }
+    list_of_salespeople[0]
   end
 
 end

@@ -11,15 +11,14 @@ class Salespersons < ActiveSupport::TestCase
     assert @sale.valid?
    end
 
-   test "name should not be too long" do
+   test "carModel should not be too long" do
     @sale.carModel = "a" * 21
     assert_not @sale.valid?
   end
 
-  test "name should not be too long" do
-    @sale.carModel = "a" * 21
+  test "carModel should not be too short" do
+    @sale.carModel = "aa"
     assert_not @sale.valid?
   end
-
 
 end
