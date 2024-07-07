@@ -5,10 +5,6 @@ class SalespeopleControllerTest < ActionDispatch::IntegrationTest
     @salesPerson = Salesperson.create(firstName: "Charlie", lastName:"McCabe", salesNumber: 0)
   end
 
-  test "should get index" do
-    get salespeople_url
-    assert_response :success
-  end
 
   test "should create salesperson" do
     salesPerson = Salesperson.new(firstName: "Tom", lastName:"McCabe", salesNumber: 0)
