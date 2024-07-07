@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root 'sales#index'
-  resources :sales
+  resources :sales, except: [:destroy, :update, :edit, :show]
   resources :salespeople
 
 end
