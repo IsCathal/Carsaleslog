@@ -2,16 +2,10 @@ class SalespeopleController < ApplicationController
 
   def index
     @salespersons = Salesperson.all
-
-  end
-
-  def show
-    
   end
 
   def new
     @salesperson= Salesperson.new
-
   end
 
   def create 
@@ -23,12 +17,6 @@ class SalespeopleController < ApplicationController
       flash[:notice] = "There was an error"
       render 'new'
     end
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def salesperson_params
