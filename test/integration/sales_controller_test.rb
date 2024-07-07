@@ -23,12 +23,12 @@ class SalesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should redirect to root path after successful item creation" do
+  test "should redirect to root path after successful sale creation" do
     post sales_url, params: { sale: { carModel: "Ferrari", salesDate:"01/12/2014", fuelType: "Petrol", salesperson_id:  @salesPerson.id } }
     assert_redirected_to root_path
   end
 
-  test "should set flash notice if item creation fails" do
+  test "should set flash notice if sale creation fails" do
     post sales_url, params: { sale: { carModel: "", salesDate:"01/12/2014", fuelType: "Petrol", salesperson_id:  @salesPerson.id } }
     assert_equal "There was an error", flash[:notice]
   end

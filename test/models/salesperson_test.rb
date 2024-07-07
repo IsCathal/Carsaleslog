@@ -8,4 +8,24 @@ class SalesPerson < ActiveSupport::TestCase
     assert @salesPerson.valid?
    end
 
+   test "firstName should not be too long" do
+    @salesPerson.firstName = "a" * 21
+    assert_not @salesPerson.valid?
+  end
+
+  test "lastName should not be too long" do
+    @salesPerson.lastName = "a" * 21
+    assert_not @salesPerson.valid?
+  end
+
+  test "firstName should not be too short" do
+    @salesPerson.firstName = "aa"
+    assert_not @salesPerson.valid?
+  end
+
+  test "lastName should not be too short" do
+    @salesPerson.lastName = "aa"
+    assert_not @salesPerson.valid?
+  end
+
 end
