@@ -1,4 +1,4 @@
-<h1>Welcome to the Car Slaes Log!</h1>
+<h1>Welcome to the Car Sales Log!</h1>
 <table class="table">
   <thead>
     <tr>
@@ -13,7 +13,7 @@
       <tr>
         <td><%= sale.carModel %></td>
         <td><%= sale.salesDate %></td>
-        <td><%= sale.seller_name %></td>
+        <td><%= "#{sale.salesperson.display_first_last} #{sale.salesperson.salesNumber} sales" %></td>
         <td><%= sale.fuelType %></td>
       </tr>
     <% end %>
