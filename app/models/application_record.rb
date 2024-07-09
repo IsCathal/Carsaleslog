@@ -1,7 +1,7 @@
 class ApplicationRecord < ActiveRecord::Base
   primary_abstract_class
 
-  def top_seller
+  def highest_sales_count
 
     salespeople = Salesperson.all
     

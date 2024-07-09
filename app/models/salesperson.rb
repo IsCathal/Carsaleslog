@@ -9,7 +9,7 @@ class Salesperson < ApplicationRecord
 
 
   def display_first_last
-    if salesNumber == top_seller  && Salesperson.count > 1
+    if salesNumber == highest_sales_count  && Salesperson.count > 1
       "#{firstName} #{lastName} (Best salesperson)"
     else
        "#{firstName} #{lastName}"
