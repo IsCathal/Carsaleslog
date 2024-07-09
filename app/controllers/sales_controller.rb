@@ -12,11 +12,10 @@ class SalesController < ApplicationController
   def create
     @sale= Sale.new(sale_params)
  
-    temp_salesperson = Salesperson.find(@sale.salesperson_id)
-    temp_salesperson.salesNumber += 1
-    temp_salesperson.save
-
     if @sale.save
+      temp_salesperson = Salesperson.find(@sale.salesperson_id)
+      temp_salesperson.salesNumber += 1
+      temp_salesperson.save
       flash[:notice] = "Sale was successfully created"
       redirect_to root_path
     else
