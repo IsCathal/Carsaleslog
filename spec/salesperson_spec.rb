@@ -27,4 +27,21 @@ RSpec.describe Salesperson, type: :model do
       expect(salesperson).not_to be_valid
     end
   end
+
+  before(:each) do
+    @salesperson1 = Salesperson.create(firstName: 'John', lastName: 'Doe')
+    @salesperson2 = Salesperson.create(firstName: 'Jane', lastName: 'Smith')
+
+    # Create sales for salesperson1
+    5.times { Sale.create(carModel: 'Opel', salesDate: '2024-10-10', fuelType: 'Petrol', salesperson: @salesperson1) }
+
+    # Create sales for salesperson2
+    3.times { Sale.create(carModel: 'Opel', salesDate: '2024-10-10', fuelType: 'Petrol', salesperson: @salesperson2) }
+  end
+
+  describe '#display_first_last' do
+    it 'returns the full name with best salesperson tag for the best salesperson' do
+      expect(@salesperson1.display_first_last).to eq('John Doe (Best salesperson)')
+    end
+  end
 end
